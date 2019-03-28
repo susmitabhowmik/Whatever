@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   # end
 
   namespace :api do
-    get '/maps' => 'maps#index'
+    get '/restaurants' => 'restaurants#index'
 
     post '/users' => 'users#create'
-    
+
   end
 end

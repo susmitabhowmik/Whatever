@@ -1,4 +1,4 @@
-class Api::MapsController < ApplicationController
+class Api::RestaurantsController < ApplicationController
   def index
     address = params[:address]
     modified_address = ""

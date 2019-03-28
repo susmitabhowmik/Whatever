@@ -14,17 +14,20 @@ class Api::RestaurantsController < ApplicationController
 
     response = HTTP.get("https://maps.googleapis.com/maps/api/geocode/json?address=#{modified_address}&key=#{ENV["GOOGLE_API_KEY"]}")
 
-    @lat = response.parse["results"][0]["geometry"]["location"]["lat"]
-    @lng = response.parse["results"][0]["geometry"]["location"]["lng"]
+    @begin_lat = response.parse["results"][0]["geometry"]["location"]["lat"]
+    @begin_lng = response.parse["results"][0]["geometry"]["location"]["lng"]
 
     keyword = params[:keyword]
     distance = params[:distance]
 
-    restaurant = HTTP.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{@lat},#{@lng}&radius=#{distance}&type=restaurant&keyword=#{keyword}&key=#{ENV["GOOGLE_API_KEY"]}")
+    restaurant = HTTP.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{@begin_lat},#{@begin_lng}&radius=#{distance}&type=restaurant&keyword=#{keyword}&key=#{ENV["GOOGLE_API_KEY"]}").parse["results"].to_a.sample
 
 
-    @resturant_name = restaurant.parse["results"].to_a.sample["name"]
-    @resturant_address = restaurant.parse["results"].to_a.sample["vicinity"]
+    @resturant_name = restaurant["name"]
+    @resturant_address = restaurant["vicinity"]
+
+    @end_lat = restaurant["geometry"]["location"]["lat"]
+    @end_lng = restaurant["geometry"]["location"]["lng"]
 
     render 'index.json.jbuilder'
   end

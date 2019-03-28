@@ -1,2 +1,2 @@
-json.latitude @lat
-json.longitude @lng
+json.name @resturant_name
+json.address @resturant_address

@@ -18,8 +18,9 @@ class Api::MapsController < ApplicationController
     @lng = response.parse["results"][0]["geometry"]["location"]["lng"]
 
     keyword = params[:keyword]
+    distance = params[:distance]
 
-    restaurant = HTTP.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{@lat},#{@lng}&radius=1609.34&type=restaurant&keyword=#{keyword}&key=#{ENV["GOOGLE_API_KEY"]}")
+    restaurant = HTTP.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{@lat},#{@lng}&radius=#{distance}&type=restaurant&keyword=#{keyword}&key=#{ENV["GOOGLE_API_KEY"]}")
 
 
     @resturant_name = restaurant.parse["results"].to_a.sample["name"]

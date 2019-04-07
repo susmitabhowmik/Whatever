@@ -21,6 +21,6 @@ class Api::EventsController < ApplicationController
 
     response = HTTP.get("https://app.ticketmaster.com/discovery/v2/events.json?latlong=#{lat},#{long}&radius=#{radius}&units=km&apikey=#{ENV["TICKETMASTER_API_KEY"]}")
 
-    render json: response.parse
+    render json: response.parse.to_a[0][1]["events"].sample
   end
 end

@@ -19,9 +19,10 @@ class Api::RestaurantsController < ApplicationController
 
     keyword = params[:keyword]
     distance = params[:distance]
+    minprice = params[:minprice]
+    maxprice = params[:maxprice]
 
-    restaurant = HTTP.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{@begin_lat},#{@begin_lng}&radius=#{distance}&type=restaurant&keyword=#{keyword}&key=#{ENV["GOOGLE_API_KEY"]}").parse["results"].to_a.sample
-
+    restaurant = HTTP.get("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{@begin_lat},#{@begin_lng}&radius=#{distance}&type=restaurant&keyword=#{keyword}&minprice=#{minprice}&maxprice=#{maxprice}&openNow=true&key=#{ENV["GOOGLE_API_KEY"]}").parse["results"].to_a.sample
 
     @resturant_name = restaurant["name"]
     @resturant_address = restaurant["vicinity"]

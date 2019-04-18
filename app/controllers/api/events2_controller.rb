@@ -1,6 +1,6 @@
 class Api::Events2Controller < ApplicationController
   def index
-   address = params[:address]
+    address = params[:address]
     modified_address = ""
     i = 0
     address.length.times do 

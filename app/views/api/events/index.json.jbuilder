@@ -1,5 +1,5 @@
 json.name @event["name"]
-json.dateTime @event["dates"]["start"]["dateTime"]
+json.dateTime @date_time
 json.venue @event["_embedded"]["venues"][0]["name"]
 json.address @event["_embedded"]["venues"][0]["address"]["line1"]
 if @event["priceRanges"]

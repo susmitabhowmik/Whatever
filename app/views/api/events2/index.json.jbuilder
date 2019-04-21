@@ -1,9 +1,9 @@
 json.event_name @response["name"]["text"]
 json.description @response["description"]["text"]
-json.start_time @response["start"]["local"]
-json.end_time @response["end"]["local"]
+json.start_time @start_time
+json.end_time @end_time
 json.venue @venue
 json.url @response["url"]
 
 
-#json.response @response
+json.response @response

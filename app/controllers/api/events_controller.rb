@@ -25,7 +25,7 @@ class Api::EventsController < ApplicationController
 
 
     @event = response.parse.to_a[0][1]["events"].sample
-    @date_time = Date.parse(@event["dates"]["start"]["dateTime"]).strftime("%b %e, %l:%M %p")
+    @date_time = @event["dates"]["start"]["dateTime"]
     render 'index.json.jbuilder'
   end
 end

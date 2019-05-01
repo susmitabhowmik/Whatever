@@ -6,4 +6,4 @@ json.venue @venue
 json.url @response["url"]
 
 
-json.response @response
+# json.response @response

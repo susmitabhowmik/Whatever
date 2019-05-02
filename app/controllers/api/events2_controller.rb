@@ -27,8 +27,8 @@ class Api::Events2Controller < ApplicationController
    
     @venue = HTTP.get("https://www.eventbriteapi.com/v3/venues/#{@response["venue_id"]}/?token=#{ENV["EVENTBRITE_API_KEY"]}").parse["address"]["localized_address_display"]
 
-    @start_time = @response["start"]["local"]
-    @end_time = @response["end"]["local"]
+    @start_time = @response["start"]["local"].to_date.strftime('%A, %d %b %Y %l:%M %p')
+    @end_time = @response["end"]["local"].to_date.strftime('%A, %d %b %Y %l:%M %p')
 
     render 'index.json.jbuilder'
   end

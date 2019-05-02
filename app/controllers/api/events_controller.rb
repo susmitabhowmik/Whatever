@@ -1,4 +1,6 @@
 class Api::EventsController < ApplicationController
+
+  
   def index
     address = params[:address]
     modified_address = ""
@@ -25,7 +27,7 @@ class Api::EventsController < ApplicationController
 
 
     @event = response.parse.to_a[0][1]["events"].sample
-    @date_time = @event["dates"]["start"]["dateTime"]
+    @date_time = @event["dates"]["start"]["dateTime"].to_date.strftime('%A, %d %b %Y %l:%M %p')
     render 'index.json.jbuilder'
   end
 end

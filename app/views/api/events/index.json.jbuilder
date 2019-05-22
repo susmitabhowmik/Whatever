@@ -9,4 +9,4 @@ if @event["priceRanges"]
 end
 json.url @event["url"]
 
-# json.event @event
+json.event @event

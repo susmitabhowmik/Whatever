@@ -35,4 +35,5 @@ class Api::RestaurantsController < ApplicationController
   end
 end
 
-#test commit for heroku
+
+#test commit

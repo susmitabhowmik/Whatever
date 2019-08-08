@@ -34,3 +34,5 @@ class Api::RestaurantsController < ApplicationController
     render 'index.json.jbuilder'
   end
 end
+
+#test commit

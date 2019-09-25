@@ -35,3 +35,5 @@ EVENTBRITE_API_KEY: api_key_here
 * You must press the go button to retrieve data, and also use go to refresh.
 * To find an event near you, both the date and time are required. Please ensure you specify AM or PM for the application to work correctly.
 * You can utilize the map by manually typing in origin and destination addresses
+
+A live version of the application can be found here: [Whatever](https://whatever-app.herokuapp.com/#/).

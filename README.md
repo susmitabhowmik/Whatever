@@ -15,7 +15,7 @@ To clone the application, run the following command in your command line.
 
 Once you clone the app, run `bundle install` in terminal to ensure the installation of gems.
 
-Then run `rails -s` to start up rails server, Afterwards, navigate to localhost:3000.
+Then run `rails -s` to start up rails server. Afterwards, navigate to localhost:3000.
 
 At this point, you should be able to see the home page for Whatever. 
 

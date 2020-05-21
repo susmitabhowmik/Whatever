@@ -1,11 +1,11 @@
 # Whatever #
 
-Whatever is an application for indecisive people created using Ruby on Rails for the backend and Vue.js for the frontend. Whatever helps you decide on where to eat and what to do. It helps you choose a local event or a major event to attend in your area. You can filter the choices the app makes for you via parameters such as price, date, and time.  Whatever is the perfect app to help you plan a weekend getaway or even to discover new things near you.
+Whatever is an application for indecisive people created using Ruby on Rails for the backend and Vue.js for the frontend. Whatever helps you decide on where to eat and what to do. You can filter the choices the app makes for you via parameters such as price, date, and time.  Whatever is the perfect app to help you plan a weekend getaway or even to discover new things near you.
 
 ## Prerequisites ## 
 
 Rails 5.2.2.1
-ruby 2.6.1
+
 
 ## Installing ##
 
@@ -29,7 +29,6 @@ Add API keys in the following formats :
 
 GOOGLE_API_KEY: api_key_here </br>
 TICKETMASTER_API_KEY: api_key_here </br>
-EVENTBRITE_API_KEY: api_key_here
 
 ## Using the application ## 
 * You must press the go button to retrieve data, and also use go to refresh.
